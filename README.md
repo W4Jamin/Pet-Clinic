@@ -1,2 +1,2 @@
 # Pet-Clinic
-Learning Spring Framework and Have Fun
+Learning Spring Framework and Having Fun
