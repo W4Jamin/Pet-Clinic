@@ -37,6 +37,7 @@
                     <autoVersionSubmodules>true</autoVersionSubmodules>
                     <checkModificationExcludes>
                         <checkModificationExclude>pom.xml</checkModificationExclude>
+                        <checkModificationExclude>**</checkModificationExclude>
                     </checkModificationExcludes>
                 </configuration>
             </plugin>
@@ -45,7 +46,8 @@
 
     <scm>
         <developerConnection>scm:git:https://github.com/W4Jamin/pet-clinic.git</developerConnection>
-        <tag>pet-clinic-0.0.1</tag>
-    </scm>
+        <!--<tag>pet-clinic-0.0.2</tag>-->
+      <tag>pet-clinic-0.0.1</tag>
+  </scm>
 
 </project>
