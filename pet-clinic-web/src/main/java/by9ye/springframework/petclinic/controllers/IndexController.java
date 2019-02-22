@@ -10,4 +10,9 @@ public class IndexController {
     public String index() {
         return "index"; // look for a templates called index
     }
+
+    @RequestMapping("/oups")
+    public String oupsHandler() {
+        return "notImplemented";
+    }
 }
