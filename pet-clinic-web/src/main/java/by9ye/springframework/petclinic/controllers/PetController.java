@@ -77,14 +77,14 @@ public class PetController {
             return VIEWS_PETS_CREATE_OR_UPDATE_FORM;
         }
         else {
-            Long oldId = pet.getId();
+            //Long oldId = pet.getId();
             owner.getPets().add(pet);
-            pet.setOwner(owner);
-            pet.setId(null);
+//            pet.setOwner(owner);
+//            pet.setId(null);
             petService.save(pet);
-            Pet oldPet = petService.findById(oldId);
-            oldPet.setOwner(null);
-            petService.delete(oldPet);
+//            Pet oldPet = petService.findById(oldId);
+//            oldPet.setOwner(null);
+//            petService.delete(oldPet);
             return "redirect:/owners/" + owner.getId();
         }
     }
