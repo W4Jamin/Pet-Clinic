@@ -52,6 +52,7 @@ public class PetController {
             result.rejectValue("name", "duplicate", "already exists");
         }
         owner.getPets().add(pet);
+        pet.setOwner(owner);
         if (result.hasErrors()) {
             model.addAttribute("pet", pet);
             return VIEWS_PETS_CREATE_OR_UPDATE_FORM;
@@ -76,8 +77,14 @@ public class PetController {
             return VIEWS_PETS_CREATE_OR_UPDATE_FORM;
         }
         else {
+            Long oldId = pet.getId();
             owner.getPets().add(pet);
+            pet.setOwner(owner);
+            pet.setId(null);
             petService.save(pet);
+            Pet oldPet = petService.findById(oldId);
+            oldPet.setOwner(null);
+            petService.delete(oldPet);
             return "redirect:/owners/" + owner.getId();
         }
     }
